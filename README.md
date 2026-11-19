@@ -5,7 +5,7 @@
 ## 安装
 
 1. 退出游戏，下载 [Onimusha3-ZH-CN-Fixes-v1.0.0.zip](https://github.com/DangoYoung/Onimusha3-ZH-CN-Fixes/raw/HEAD/downloads/Onimusha3-ZH-CN-Fixes-v1.0.0.zip)。把压缩包里的 `scripts` 文件夹和两个 `.cmd` 文件放到 `oni3.exe` 所在目录。已装过原版宽屏补丁的用户可先备份旧的 `.asi` 和 `.ini`，再替换同名文件。
-2. 宽屏功能需要 [Ultimate ASI Loader 的 Win32 dinput8.dll](https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/download/Win32-latest/dinput8-Win32.zip)。将其中的 `dinput8.dll` 放到游戏根目录。如果已经安装原宽屏包附带的加载器，可以继续使用。
+2. 下载 [32 位 dinput8.dll](https://github.com/DangoYoung/Onimusha3-ZH-CN-Fixes/raw/HEAD/downloads/dinput8.dll)，把它放到 `oni3.exe` 所在目录。这个 DLL 是运行宽屏补丁所需的 Ultimate ASI Loader。v1.0.0 补丁 ZIP 和加载器分别下载。
 3. 双击 `Start-Onimusha3.cmd` 或 `oni3.exe`。兼容启动脚本以自身目录为工作目录，无需管理员权限。它也可以脱离宽屏补丁单独使用。
 
 如果需要为免安装版补写注册表，右键以管理员身份运行 `Configure-Registry.cmd`。它只写入该游戏的 32 位 `InstallPath` 和 `Language`。原版 `Oni3Launcher.exe` 在部分系统上会额外请求注册表写权限，遇到该问题时请使用兼容启动脚本。
@@ -33,5 +33,5 @@ oni3.exe SHA-256
 
 ## 上游与许可证
 
-宽屏布局参考 [ThirteenAG 的 Onimusha 3 Widescreen Fix](https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/onimusha3)。简中版移植和过场、读档顶点顺序修正于 2026-11-19 完成。本仓库按 GPL-3.0 发布，详见 [LICENSE](LICENSE) 和 [第三方说明](NOTICE.md)。发布包提供补丁和对应源码。游戏本体、游戏资源与 ASI Loader 请分别从各自渠道获取。
+宽屏布局参考 [ThirteenAG 的 Onimusha 3 Widescreen Fix](https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/onimusha3)。简中版移植和过场、读档顶点顺序修正于 2026-11-19 完成。本仓库按 GPL-3.0 发布，详见 [LICENSE](LICENSE) 和 [第三方说明](NOTICE.md)。发布包提供补丁和对应源码。加载器单独提供，游戏本体和游戏资源请从各自发行渠道获取。
 
