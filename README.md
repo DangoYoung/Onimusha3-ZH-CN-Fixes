@@ -12,7 +12,7 @@
 | [Onimusha3.WidescreenFix.asi](https://github.com/DangoYoung/Onimusha3-ZH-CN-Fixes/raw/HEAD/downloads/Onimusha3.WidescreenFix.asi) | 游戏目录下的 `scripts` 文件夹 |
 | [dinput8.dll](https://github.com/DangoYoung/Onimusha3-ZH-CN-Fixes/raw/HEAD/downloads/dinput8.dll) | `oni3.exe` 同目录 |
 
-如需补写注册表，右键以管理员身份运行 `Configure-Registry.cmd`。平时直接运行 `oni3.exe`。若原启动器仍提示 “Cannot Find the Game”，也可以直接运行游戏本体。
+如需补写注册表，右键以管理员身份运行 `Configure-Registry.cmd`。双击 `oni3.exe` 即可直接启动游戏，绕过原启动器的 “Cannot Find the Game” 报错。
 
 ## 设置窗口分辨率
 
@@ -35,4 +35,4 @@ FMVFullscreenMode = 0
 cl /nologo /W4 /WX /O2 /MT /LD /EHsc /std:c++17 /arch:IA32 Onimusha3.WidescreenFix.cpp /link /OUT:Onimusha3.WidescreenFix.asi user32.lib
 ```
 
-本适配版按 [GPL-3.0](LICENSE) 发布，参考了 [ThirteenAG 的宽屏补丁](https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/onimusha3)。下载区的 `dinput8.dll` 是原补丁包所附的 Win32 [Ultimate ASI Loader](https://github.com/ThirteenAG/Ultimate-ASI-Loader)。 [上游宽屏补丁许可声明](licenses/WidescreenFix-MIT.txt) · [加载器 MIT 许可](licenses/Ultimate-ASI-Loader-MIT.txt)
+简中版适配和画面折叠修正完成于 2026-11-19。本适配版按 [GPL-3.0](LICENSE) 发布，参考了 [ThirteenAG 的宽屏补丁](https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/onimusha3)。下载区的 `dinput8.dll` 是原补丁包所附的 Win32 [Ultimate ASI Loader](https://github.com/ThirteenAG/Ultimate-ASI-Loader)。 [上游宽屏补丁许可声明](licenses/WidescreenFix-MIT.txt) · [加载器 MIT 许可](licenses/Ultimate-ASI-Loader-MIT.txt)
