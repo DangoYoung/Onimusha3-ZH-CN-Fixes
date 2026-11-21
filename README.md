@@ -14,6 +14,18 @@
 
 如需补写注册表，右键以管理员身份运行 `Configure-Registry.cmd`。双击 `oni3.exe` 即可直接启动游戏，绕过原启动器的 “Cannot Find the Game” 报错。
 
+## 修复动物园破魔镜报错
+
+简体中文 PC 版 1.0.0.1 中，使用动物园研究所幻魔科学家 Boss 房门前的破魔镜打开「保存」或「强化」界面时，可能弹出 `Error .\class\c_moji.cpp:3045`。补丁修正该房间的简中字形索引，可单独使用。
+
+退出游戏后，[下载 Fix-Mirror.ps1](https://raw.githubusercontent.com/DangoYoung/Onimusha3-ZH-CN-Fixes/main/Fix-Mirror.ps1)，把脚本放到 `oni3.exe` 同目录。在游戏目录打开命令提示符或 PowerShell，运行以下命令。
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Fix-Mirror.ps1
+```
+
+脚本会校验游戏资源，使用 `Image\Area\area801.ldt` 修正 `Image\Area\area809.ldt`，并在同目录备份原文件为 `area809.ldt.before-mirror-fix.bak`。如果需要还原，退出游戏后把备份复制为 `area809.ldt` 并覆盖当前文件。
+
 ## 设置窗口分辨率
 
 需要指定尺寸时，在 `scripts` 中创建 `Onimusha3.WidescreenFix.ini`，写入以下内容后重启游戏。
