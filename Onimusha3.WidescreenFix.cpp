@@ -258,8 +258,8 @@ namespace
         std::memcpy(path + length - 4, L".ini", sizeof(L".ini"));
         Resolution& resolution = settings.resolution;
         resolution = {
-            GetPrivateProfileIntW(L"MAIN", L"ResX", 0, path),
-            GetPrivateProfileIntW(L"MAIN", L"ResY", 0, path),
+            GetPrivateProfileIntW(L"MAIN", L"ResX", 1200, path),
+            GetPrivateProfileIntW(L"MAIN", L"ResY", 900, path),
         };
         settings.cropMovies = GetPrivateProfileIntW(L"MAIN", L"FMVFullscreenMode", 0, path) != 0;
 

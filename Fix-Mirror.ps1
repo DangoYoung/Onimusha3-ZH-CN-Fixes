@@ -7,11 +7,11 @@ param(
 $ErrorActionPreference = 'Stop'
 
 function Get-Sha256([byte[]]$Bytes) {
-    $stream = [IO.MemoryStream]::new($Bytes)
+    $algorithm = [Security.Cryptography.SHA256]::Create()
     try {
-        (Get-FileHash -InputStream $stream -Algorithm SHA256).Hash
+        [BitConverter]::ToString($algorithm.ComputeHash($Bytes)).Replace('-', '')
     } finally {
-        $stream.Dispose()
+        $algorithm.Dispose()
     }
 }
 
@@ -69,7 +69,7 @@ try {
 
     $backupForReplace = [NullString]::Value
     if (Test-Path -LiteralPath $backupPath) {
-        if ((Get-FileHash -LiteralPath $backupPath).Hash -ne $originalHash) {
+        if ((Get-Sha256 ([IO.File]::ReadAllBytes($backupPath))) -ne $originalHash) {
             throw "The existing backup does not match the original resource. Move it aside before retrying: $backupPath"
         }
     } else {
@@ -81,7 +81,7 @@ try {
     if (Get-Process -Name oni3,Oni3Launcher -ErrorAction SilentlyContinue) {
         throw 'Close the game and launcher before installing the fix.'
     }
-    if ((Get-FileHash -LiteralPath $roomPath).Hash -ne $originalHash) {
+    if ((Get-Sha256 ([IO.File]::ReadAllBytes($roomPath))) -ne $originalHash) {
         throw 'area809.ldt changed during installation. Retry after closing other game tools.'
     }
 
